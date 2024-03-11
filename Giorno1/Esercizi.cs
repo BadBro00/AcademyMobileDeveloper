@@ -2,6 +2,7 @@ using System;
 
 public class Prova{
     public static void Main(){
+        //--------------------------------------------
         //Esercizio 1
         //Chiedi nome e cognome e stampa, poi due numeri e stampa somma, poi mostra nome,eta,id e sal di un impiegato
         Console.WriteLine("Esercizio 1: Chiedi nome e cognome e stampa, poi due numeri e stampa somma, poi mostra nome,eta,id e sal di un impiegato\n");
@@ -27,6 +28,7 @@ public class Prova{
         Console.WriteLine("Inserisci il salario dell'impiegato: ");
         sal = Convert.ToDouble(Console.ReadLine());
         Console.WriteLine($"Nome: {nm}\nEtà: {eta}\nId: {id}\nSalario: {sal}");
+        //---------------------------------------------------------------------
         //Esercizio 2
         //Data la risoluzione di una foto, calcola i megapixel
         Console.WriteLine("Esercizio 2: Calcola i megapixel di una foto\n");
