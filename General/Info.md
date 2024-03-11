@@ -18,5 +18,5 @@ VSCode : Terminale -> cmd -> <dotnet run>
 1. Definire la variabile ed inizializzarla
 2. Console.WriteLine($".... {var}");
 ESEMPIO :
-  nome = Console.ReadLine();
-  Console.WriteLine($"Ciao {nome}!");
+nome = Console.ReadLine();
+Console.WriteLine($ "Ciao {nome}!");
