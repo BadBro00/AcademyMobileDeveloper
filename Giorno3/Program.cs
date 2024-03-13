@@ -14,5 +14,10 @@ public class Giorno3{
         Somma(n1,n2);
       //Variabile REFERENCE per il GARBAGE COLLECTOR - Passaggio valore per *Riferimento*
         int a = ref n1;
+        //----------------|DATE|----------------|NOT WORKING|-----------------
+        DateTime data = new DateTime(2021, 10, 12);
+        Console.WriteLine(data.ToString("dd/MM/yyyy"));
+        Console.WriteLine("Giorno: " + data.day + ", Mese: " + data.month + ", Anno: " + data.year);
+        Console.WriteLine("Giorno della settimana: "+ data.DayOfWeek);
     }
 }
