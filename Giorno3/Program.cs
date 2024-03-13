@@ -14,10 +14,36 @@ public class Giorno3{
         Somma(n1,n2);
       //Variabile REFERENCE per il GARBAGE COLLECTOR - Passaggio valore per *Riferimento*
         int a = ref n1;
-        //----------------|DATE|----------------|NOT WORKING|-----------------
-        DateTime data = new DateTime(2021, 10, 12);
-        Console.WriteLine(data.ToString("dd/MM/yyyy"));
-        Console.WriteLine("Giorno: " + data.day + ", Mese: " + data.month + ", Anno: " + data.year);
-        Console.WriteLine("Giorno della settimana: "+ data.DayOfWeek);
+        //----------------|DATE|--------------
+        DateTime data = new DateTime(2024,3,13);
+        Console.WriteLine(data.ToString());
+        int day = data.Day;
+        int month = data.Month;
+        int year = data.Year;
+        Console.WriteLine("Giorno: " + day + ", Mese: " + month + ", Anno: " + year);
+        string weekday = data.DayOfWeek.ToString();
+        switch(weekday){
+            case "Monday":
+                Console.WriteLine("Lunedì");
+                break;
+            case "Tuesday":
+                Console.WriteLine("Martedì");
+                break;
+            case "Wednesday":
+                Console.WriteLine("Mercoledì");
+                break;
+            case "Thursday":
+                Console.WriteLine("Giovedì");
+                break;
+            case "Friday":
+                Console.WriteLine("Venerdì");
+                break;
+            case "Saturday":
+                Console.WriteLine("Sabato");
+                break;
+            case "Sunday":
+                Console.WriteLine("Domenica");
+                break;
+        }
     }
 }
