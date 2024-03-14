@@ -57,7 +57,6 @@ public class Giorno4{
         }else{
             Console.WriteLine("Scelta errata");
         }
-
     }
 }
 //Esercizio 1
@@ -149,5 +148,4 @@ public class CalcAree{
         double area = lato*lato;
         Console.WriteLine("Area: "+area);
     }
-
 }
