@@ -20,7 +20,7 @@ Entrambi i metodi riceveranno i parametri necessari per il calcolo dell'area
 (raggio per il cerchio, lato per il quadrato) e restituiranno l'area calcolata.
 Nel tuo programma principale, chiedi all'utente di scegliere tra il calcolo dell'area di un cerchio o di un quadrato,
 quindi esegui il calcolo appropriato e stampa il risultato.
-*/
+
 using System;
 
 public class Giorno4{
@@ -57,6 +57,7 @@ public class Giorno4{
         }else{
             Console.WriteLine("Scelta errata");
         }
+
     }
 }
 //Esercizio 1
@@ -147,5 +148,144 @@ public class CalcAree{
     public static void CalcolaAreaQuadrato(int lato){
         double area = lato*lato;
         Console.WriteLine("Area: "+area);
+    }
+}*/
+
+//------------------------|ESERCIZI|-----------------------------
+/*
+ES 1:
+In qualità di nuovo stagista, hai il compito di attrezzare le nuove sale di formazione
+    con tutti gli elementi necessari per condurre corsi di formazione tecnica di qualità.
+Ti verrà assegnato un budget e un elenco di articoli da acquistare. 
+      
+    INPUT:
+    • Sulla prima riga, si richiederà il  budget, un valore in virgola mobile      
+    • Sulla seconda riga, richiederà il numero di articoli da acquistare
+    • Nelle  3 righe successive, si richiedono i dati dell'articolo come tali:
+        1. Il nome dell'elemento -
+        2. Il prezzo dell'articolo -
+        3. lA Quantità degli elementi
+    :
+    OUTPUT
+    Ogni volta che un articolo viene aggiunto al carrello, stampa "Aggiunta di {quantità} {oggetto} al carrello" sulla console. 
+    Dopo che tutti gli articoli sono stati aggiunti al carrello, è necessario calcolare il totale parziale degli 
+        articoli e verificare se il budget sarà sufficiente.
+    • Se è sufficiente, stampa "Denaro disponibile: $ {denaroDisponibile}"
+    • Altrimenti, stampa "Non abbastanza. Abbiamo bisogno di $ {denaro} in più."
+
+
+ES 2: ECCEZIONI
+Scrivere un programma che gestisca l’eccezione generata dal codice:
+int[] T = null;
+T[0] = 7;
+NullReferenceException e
+
+
+ES 3:
+Scrivere un programma che gestisca l’eccezione generata dal codice:
+string s = null;
+int l = s.Length;
+
+
+ES 4: 
+Creare una classe 
+Quadrato, con lato di valore 15. Quindi stampare il
+perimetro e l’area dell’oggetto appena creato.
+
+ES 5:
+ * Scrivere un programma SommaPariDispari che prevede un array di 10 numeri interi contenente valori a 
+ * piacere (senza bisogno di chiederli all’utente) e stampa Pari e dispari uguali se la somma dei numeri 
+ * in posizioni pari dell’array e' uguale alla somma dei numeri in posizioni dispari, altrimenti il 
+ * programma stampa Pari e dispari diversi. 
+*/
+using System;
+//using System.Exception;
+public class Giorno4{
+    public static void Main(){
+        Console.WriteLine("Esercizio1\n");
+        Esercizio1();
+        Console.WriteLine("Esercizio2\n");
+        Esercizio2();
+        Console.WriteLine("Esercizio3\n");
+        Esercizio3();
+        Console.WriteLine("Esercizio4\n");
+        Console.WriteLine("Creo Quadrato con l = 15\n");
+        Quadrato q = new Quadrato(15);
+        Console.WriteLine("Perimetro del quadrato: "+q.CalcolaPerim(q.getLato())+", Area del quadrato: "+q.CalcolArea(q.getLato()));
+        Console.WriteLine("Esercizio 5\n");
+        Esercizio5();
+    }
+    public static void Esercizio1(){
+        Console.WriteLine("Inserisci il budget: ");
+        double budget = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Inserisci il numero di articoli da acquistare: ");
+        int n_articoli = Convert.ToInt32(Console.ReadLine());
+        int tot_articoli = 0;
+        while(budget>0 && tot_articoli<n_articoli){
+            Console.WriteLine("Inserisci il nome dell'articolo: ");
+            string nm_art = Console.ReadLine();
+            Console.WriteLine("Inserisci il prezzo dell'articolo: ");
+            double pr_art = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Inserisci la quantità dell'articolo: ");
+            int q_art = Convert.ToInt32(Console.ReadLine());
+            if(budget >= q_art*pr_art){
+                budget -= q_art*pr_art;
+                for(int i=0;i<q_art;i++)
+                    tot_articoli++;
+                Console.WriteLine("Aggiunta di "+q_art+" "+nm_art+" al carrello\n\t|Budget Rimanente : "+ budget+"|");
+            }else{
+                Console.WriteLine("Non abbastanza. Abbiamo bisogno di: "+(budget-q_art*pr_art-budget)+" in più.");
+            }
+        }
+    }
+    public static void Esercizio2(){
+        int[] T = null;
+        try{
+            T[0] = 7;
+        }catch (NullReferenceException){
+            Console.WriteLine("Null Reference Exception\n|Conversione di una variabile NULL in un tipo che non ammette NULL|\n");
+        }
+    }
+    public static void Esercizio3(){
+        try{
+            string s = null;
+            int l = s.Length;
+        }catch(NullReferenceException){
+            Console.WriteLine("Dereferenziazione di un valore NULL\n|Stai prendendo la lunghezza di una variabile NULL|");
+        }
+    }
+    public static void Esercizio5(){
+        Random rnd = new Random();
+        int dim = 10;
+        int[] array = new int[dim];
+        for(int i=0;i<dim;i++)
+            array[i] = rnd.Next(1,100);
+        int sommapari = 0,sommadisp = 0;
+        foreach (var num in array){
+            if(num%2==0)
+                sommapari+=num;
+            else
+                sommadisp+=num;
+        }   
+        if(sommapari == sommadisp)
+            Console.WriteLine("Pari e dispari uguali");
+        else
+            Console.WriteLine("Pari e dispari diversi");
+    }
+}
+//ESERCIZIO 4
+public class Quadrato{
+    private int lato;
+    public Quadrato(int l){
+        this.lato = l;
+    }
+    public int getLato(){
+        return this.lato;
+    }
+    public int CalcolaPerim(int l){
+        return l*4;
+    }
+    public int CalcolArea(int l){
+        return l*l;
     }
 }
