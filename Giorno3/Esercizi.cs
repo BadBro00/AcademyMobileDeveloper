@@ -101,7 +101,7 @@ public class Esercizi3{
             }
         }
     }
-    public static void Esercizio2(string nome,int saluteatt,int salutefin,int eneratt,int enerfin){
+    public static void Esercizio2(string nome,int saluteatt,int eneratt,int salutefin = 100,int enerfin=100){
         int turn = 0;
         do{
             Console.WriteLine($"Nome: {nome}\n");
@@ -121,12 +121,13 @@ public class Esercizi3{
                 Console.Write("-");
             }
             Console.Write("|\n");
+            Console.WriteLine("\n--------------------\nNuovo Turno\n--------------------\n");
             Random rnd = new Random();
             for(int i=0;i<2;i++){
                 int dmg = rnd.Next(1,saluteatt);
                 saluteatt-=dmg;
                 if(saluteatt<=0){
-                    Console.WriteLine("Il personaggio è morto");
+                    Console.WriteLine("\nIl personaggio è morto");
                     break;
                 }
             }
@@ -185,7 +186,7 @@ public class Esercizi3{
         string nome;
         Console.WriteLine("Inserisci il nome del personaggio");
         nome = Console.ReadLine();
-        Esercizio2(nome,salatt,100-salatt,eneratt,100-eneratt);
+        Esercizio2(nome,salatt,eneratt);
         Console.WriteLine("Esercizio 3\n------------------");
         Esercizio3();
         Esercizio3BIS();
