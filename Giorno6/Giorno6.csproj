@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <StartupObject>Giorno6_ES1</StartupObject> <!--Primo file-->
+    <!--StartupObject>Giorno6_ES2</StartupObject--> <!--Secondo file-->
+    <!--StartupObject>Giorno6_ES3</StartupObject--> <!--Terzo file-->
+    <!--StartupObject>Giorno6_ES4</StartupObject--> <!--Quarto file-->
+    <!--StartupObject>Giorno6_ES5</StartupObject--> <!--Quinto file-->
+    <!--StartupObject>Giorno6_ES6</StartupObject--> <!--Sesto file-->
+    <!--StartupObject>Giorno6_ES7</StartupObject--> <!--Settimo file-->
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
