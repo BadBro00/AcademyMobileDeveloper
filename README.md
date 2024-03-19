@@ -3,4 +3,4 @@ Corso C#
 
 ---------------------------
 # DROPBOX
-https://www.dropbox.com/home/Programmazione%20in%20C%23/Slide
+https://www.dropbox.com/scl/fo/p6ncytbb60hjj7eroij7j/h?rlkey=a581t2opjv9015srzy9hpusmm&dl=0
